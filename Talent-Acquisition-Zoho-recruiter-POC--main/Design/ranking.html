@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candidate Ranking | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sync-candidates.html">Sync Candidates</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="filters.html">Filters</a>
+      <a href="ranking.html" class="active">Ranking</a>
+      <a href="duplicates.html">Duplicates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">RK</span>
+        <div class="profile-text">
+          <div class="profile-name">Recruiter</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">Ranking</div>
+      <div class="header-right">
+        <div class="zoho-status"><span class="status-dot"></span> Zoho Recruit: Connected</div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">RK</span>
+          <span class="recruiter-name">Recruiter</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Dashboard</a><span>/</span>
+        <a href="candidates.html">Candidates</a><span>/</span>
+        <span class="crumb-current">Ranking</span>
+      </div>
+
+      <div class="page-header">
+        <div>
+          <h1>Candidate Ranking</h1>
+          <p class="page-sub">Compare candidates against defined job requirements, select the ones to shortlist, and download the result as Excel.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Requirement Profile &mdash; Java Backend Developer</h2></div>
+        <div class="weight-bar-row">
+          <span class="weight-label">Java</span>
+          <div class="weight-bar-track"><div class="weight-bar-fill" style="width:30%;"></div></div>
+          <span class="weight-points">30 pts</span>
+        </div>
+        <div class="weight-bar-row">
+          <span class="weight-label">Spring Boot</span>
+          <div class="weight-bar-track"><div class="weight-bar-fill" style="width:30%;"></div></div>
+          <span class="weight-points">30 pts</span>
+        </div>
+        <div class="weight-bar-row">
+          <span class="weight-label">Microservices</span>
+          <div class="weight-bar-track"><div class="weight-bar-fill" style="width:20%;"></div></div>
+          <span class="weight-points">20 pts</span>
+        </div>
+        <div class="weight-bar-row">
+          <span class="weight-label">AWS</span>
+          <div class="weight-bar-track"><div class="weight-bar-fill" style="width:10%;"></div></div>
+          <span class="weight-points">10 pts</span>
+        </div>
+        <div class="weight-bar-row">
+          <span class="weight-label">Notice Period &le; 30 Days</span>
+          <div class="weight-bar-track"><div class="weight-bar-fill" style="width:10%;"></div></div>
+          <span class="weight-points">10 pts</span>
+        </div>
+        <div class="weight-bar-row" style="border-top:1px solid var(--slate-200); margin-top:4px; padding-top:12px;">
+          <span class="weight-label" style="font-weight:700; color:var(--slate-900);">Total</span>
+          <div></div>
+          <span class="weight-points">100 pts</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>Ranking Table</h2>
+          <span class="text-sm text-muted">Select candidates below to add them to your shortlist</span>
+        </div>
+
+        <div class="selection-bar">
+          <span class="selection-text" id="selectionText">0 candidates selected for shortlist</span>
+          <button type="button" class="btn btn-primary btn-download" id="downloadBtn" disabled onclick="goToDownload()">
+            <span class="dl-icon">&#8681;</span> Download Shortlist (.xlsx)
+          </button>
+        </div>
+
+        <div class="table-wrap" style="border:none;">
+          <table class="data-table" id="rankingTable">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAll" onchange="toggleAll(this)"></th>
+                <th>Rank</th>
+                <th>Candidate</th>
+                <th>Skill Match</th>
+                <th>Experience</th>
+                <th>Notice Period</th>
+                <th>Score</th>
+                <th>Match %</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="rank-check" onchange="updateSelection()"></td>
+                <td class="cell-name">#1</td>
+                <td class="cell-name">Arjun Kumar</td>
+                <td>Java, Spring Boot, Microservices</td>
+                <td>6 Years</td>
+                <td>30 Days</td>
+                <td>92 / 100</td>
+                <td><span class="match-badge match-high">92%</span></td>
+                <td><a href="candidate-details.html" class="btn btn-ghost btn-sm">View</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="rank-check" onchange="updateSelection()"></td>
+                <td class="cell-name">#2</td>
+                <td class="cell-name">Priya Sharma</td>
+                <td>Java, Spring Boot, AWS</td>
+                <td>5 Years</td>
+                <td>15 Days</td>
+                <td>85 / 100</td>
+                <td><span class="match-badge match-mid">85%</span></td>
+                <td><a href="candidate-details.html" class="btn btn-ghost btn-sm">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Match Breakdown &mdash; Arjun Kumar</h2></div>
+        <div class="match-check-list">
+          <div class="match-check-item"><span class="criteria-name">Java</span><span class="badge badge-success">Matched</span></div>
+          <div class="match-check-item"><span class="criteria-name">Spring Boot</span><span class="badge badge-success">Matched</span></div>
+          <div class="match-check-item"><span class="criteria-name">Microservices</span><span class="badge badge-success">Matched</span></div>
+          <div class="match-check-item"><span class="criteria-name">AWS</span><span class="badge badge-neutral">Not Matched</span></div>
+          <div class="match-check-item"><span class="criteria-name">Notice Period &le; 30 Days</span><span class="badge badge-success">Matched</span></div>
+        </div>
+      </div>
+
+      <div class="info-box box-blue">
+        <span class="info-icon">&#8505;</span>
+        <span>Ranking is based on configurable weighted criteria and normalized candidate information. Selecting candidates here builds your shortlist directly &mdash; there is no separate shortlist or export step. Downloading does not modify any record in Zoho Recruit.</span>
+      </div>
+
+      <div class="btn-row">
+        <a href="duplicates.html" class="btn btn-secondary">Review Duplicates</a>
+        <a href="candidates.html" class="btn btn-ghost">Back to Candidates</a>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+  function updateSelection() {
+    var checks = document.querySelectorAll('.rank-check');
+    var count = 0;
+    checks.forEach(function (c) { if (c.checked) count++; });
+    document.getElementById('selectionText').textContent = count + ' candidate' + (count === 1 ? '' : 's') + ' selected for shortlist';
+    document.getElementById('downloadBtn').disabled = count === 0;
+
+    var all = document.getElementById('selectAll');
+    all.checked = count === checks.length;
+  }
+  function toggleAll(box) {
+    document.querySelectorAll('.rank-check').forEach(function (c) { c.checked = box.checked; });
+    updateSelection();
+  }
+  function goToDownload() {
+    if (!document.getElementById('downloadBtn').disabled) {
+      window.location.href = 'export-success.html';
+    }
+  }
+</script>
+</body>
+</html>

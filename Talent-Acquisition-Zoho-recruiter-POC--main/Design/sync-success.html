@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sync Complete | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sync-candidates.html" class="active">Sync Candidates</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="filters.html">Filters</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="duplicates.html">Duplicates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">RK</span>
+        <div class="profile-text">
+          <div class="profile-name">Recruiter</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">Sync Candidates</div>
+      <div class="header-right">
+        <div class="zoho-status"><span class="status-dot"></span> Zoho Recruit: Connected</div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">RK</span>
+          <span class="recruiter-name">Recruiter</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Dashboard</a><span>/</span>
+        <a href="sync-candidates.html">Sync Candidates</a><span>/</span>
+        <span class="crumb-current">Sync Complete</span>
+      </div>
+
+      <div class="card">
+        <div class="success-state">
+          <div class="success-icon">&#10003;</div>
+          <h1>Candidate Sync Completed</h1>
+          <p>Candidate records were successfully retrieved from Zoho Recruit and prepared for screening.</p>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-item">
+            <div class="summary-value">2,486</div>
+            <div class="summary-label">Candidates Retrieved</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-value">124</div>
+            <div class="summary-label">New / Updated Records</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-value">2,486</div>
+            <div class="summary-label">Normalized Records</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-value" style="color:var(--green-600);">Completed</div>
+            <div class="summary-label">Status</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Normalization Summary</h2></div>
+        <div class="norm-list">
+          <span class="norm-chip"><span class="raw">JAVA</span><span class="arrow">&rarr;</span><span class="normalized">Java</span></span>
+          <span class="norm-chip"><span class="raw">Bangalore</span><span class="arrow">&rarr;</span><span class="normalized">Bengaluru</span></span>
+          <span class="norm-chip"><span class="raw">1 Month</span><span class="arrow">&rarr;</span><span class="normalized">30 Days</span></span>
+        </div>
+        <p class="text-muted text-sm" style="margin-top:16px;">Normalized values are used for consistent filtering, comparison, ranking, and export.</p>
+      </div>
+
+      <div class="btn-row">
+        <a href="candidates.html" class="btn btn-primary btn-lg">View Candidates</a>
+        <a href="dashboard.html" class="btn btn-secondary btn-lg">Back to Dashboard</a>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

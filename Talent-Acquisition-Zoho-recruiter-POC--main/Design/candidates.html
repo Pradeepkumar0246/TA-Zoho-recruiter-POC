@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candidates | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sync-candidates.html">Sync Candidates</a>
+      <a href="candidates.html" class="active">Candidates</a>
+      <a href="filters.html">Filters</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="duplicates.html">Duplicates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">RK</span>
+        <div class="profile-text">
+          <div class="profile-name">Recruiter</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">Candidates</div>
+      <div class="header-right">
+        <div class="zoho-status"><span class="status-dot"></span> Zoho Recruit: Connected</div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">RK</span>
+          <span class="recruiter-name">Recruiter</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Dashboard</a><span>/</span>
+        <span class="crumb-current">Candidates</span>
+      </div>
+
+      <div class="page-header">
+        <div>
+          <h1>Candidates</h1>
+          <p class="page-sub">Browse candidate profiles synchronized from Zoho Recruit.</p>
+        </div>
+        <span class="badge badge-info">2,486 Candidates</span>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-input">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" placeholder="Search by candidate name, skill, company...">
+        </div>
+        <div class="filter-toggle-row">
+          <button type="button" class="btn btn-secondary" id="filterToggleBtn" onclick="toggleFilterPanel()">
+            Filters <span class="chev">&#9660;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Inline Filter Panel: visible on the Candidates page only -->
+      <div class="card filter-panel" id="filterPanel">
+        <div class="card-header"><h2>Filter Candidates</h2></div>
+
+        <div class="section-title">Filter by Job Description (JD)</div>
+        <div class="form-grid cols-2" style="margin-bottom:6px;">
+          <div class="form-group">
+            <label>Job Description</label>
+            <select class="form-control">
+              <option>Any / No JD</option>
+              <option selected>Java Backend Developer &middot; JD-2026-014</option>
+              <option>Frontend React Developer &middot; JD-2026-021</option>
+              <option>DevOps Engineer &middot; JD-2026-009</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Skills to Match Against JD</label>
+            <input class="form-control" type="text" placeholder="e.g. Java, Spring Boot, Microservices" value="Java, Spring Boot, Microservices">
+          </div>
+        </div>
+
+        <div class="section-title">Basic Filters</div>
+        <div class="form-grid">
+          <div class="form-group" style="grid-column: span 3;">
+            <label>Skills</label>
+            <div class="chip-row">
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Spring Boot</span>
+              <span class="skill-chip">Microservices</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Experience &mdash; Minimum</label>
+            <input class="form-control" type="text" value="4 Years">
+          </div>
+          <div class="form-group">
+            <label>Experience &mdash; Maximum</label>
+            <input class="form-control" type="text" value="8 Years">
+          </div>
+          <div class="form-group">
+            <label>Current Location</label>
+            <input class="form-control" type="text" value="Bengaluru">
+          </div>
+
+          <div class="form-group">
+            <label>Notice Period</label>
+            <select class="form-control">
+              <option selected>30 Days or Less</option>
+              <option>15 Days or Less</option>
+              <option>60 Days or Less</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Candidate Status</label>
+            <select class="form-control">
+              <option>Any</option>
+              <option selected>Available</option>
+              <option>Open to Opportunities</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <a href="candidates.html" class="btn btn-primary btn-block">Apply Filters</a>
+          </div>
+        </div>
+
+        <div class="more-filters-row">
+          <span class="text-sm text-muted">Need more criteria like education, CTC range, certifications, or duplicate/source filters?</span>
+          <a href="filters.html" class="more-filters-link">More Filters &amp; Saved Templates &rarr;</a>
+        </div>
+      </div>
+
+      <div class="chip-row" style="margin-bottom:14px;">
+        <span class="filter-chip">JD: Java Backend Developer</span>
+        <span class="filter-chip">Java</span>
+        <span class="filter-chip">Spring Boot</span>
+        <span class="filter-chip">Microservices</span>
+        <span class="filter-chip">4&ndash;8 Years</span>
+        <span class="filter-chip">Bengaluru</span>
+        <span class="filter-chip">Notice &le; 30 Days</span>
+      </div>
+
+      <p class="text-muted" style="margin-bottom:16px;">2 candidates match the selected criteria.</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th><input type="checkbox"></th>
+              <th>Candidate Name</th>
+              <th>Skills</th>
+              <th>Experience</th>
+              <th>Location</th>
+              <th>Current Company</th>
+              <th>Notice Period</th>
+              <th>Status</th>
+              <th>Match %</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td class="cell-name">Arjun Kumar</td>
+              <td>Java, Spring Boot, Microservices</td>
+              <td>6 Years</td>
+              <td>Bengaluru</td>
+              <td>TechNova Solutions</td>
+              <td>30 Days</td>
+              <td><span class="badge badge-success">Available</span></td>
+              <td><span class="match-badge match-high">92%</span></td>
+              <td><a href="candidate-details.html" class="btn btn-ghost btn-sm">View</a></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td class="cell-name">Priya Sharma</td>
+              <td>Java, Spring Boot, AWS</td>
+              <td>5 Years</td>
+              <td>Bengaluru</td>
+              <td>CloudEdge Systems</td>
+              <td>15 Days</td>
+              <td><span class="badge badge-info">Open to Opportunities</span></td>
+              <td><span class="match-badge match-mid">85%</span></td>
+              <td><a href="candidate-details.html" class="btn btn-ghost btn-sm">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-footer">
+          <span>Showing 1&ndash;2 of 2,486 candidates</span>
+          <div class="pagination">
+            <a href="candidates.html">Previous</a>
+            <span class="page-current">1</span>
+            <a href="candidates.html">2</a>
+            <a href="candidates.html">3</a>
+            <a href="candidates.html">Next</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <a href="ranking.html" class="btn btn-primary btn-lg">View Rank</a>
+        <a href="duplicates.html" class="btn btn-secondary btn-lg">Review Duplicates</a>
+        <a href="filters.html" class="btn btn-outline-teal btn-lg">Save This Filter</a>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+  function toggleFilterPanel() {
+    var panel = document.getElementById('filterPanel');
+    var btn = document.getElementById('filterToggleBtn');
+    panel.classList.toggle('is-open');
+    btn.classList.toggle('is-active');
+  }
+</script>
+</body>
+</html>

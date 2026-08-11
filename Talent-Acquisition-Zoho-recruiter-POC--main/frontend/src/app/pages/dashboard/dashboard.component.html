@@ -1,0 +1,93 @@
+<app-shell
+  activeNav="dashboard"
+  headerContext="Dashboard"
+  [statusState]="isConnected ? 'connected' : 'disconnected'"
+  (logoutRequested)="onLogout()"
+>
+  <section>
+    <div class="page-header" style="margin-bottom:20px;">
+      <div>
+        <h1>Recruitment Dashboard</h1>
+        <p class="page-sub">Monitor Zoho Recruit integration health before syncing, filtering, or shortlisting candidates.</p>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-banner" role="alert">{{ errorMessage }}</div>
+
+    <div class="stats-grid" *ngIf="stats as dashboardStats">
+      <article class="stat-card accent-blue">
+        <div class="stat-label">Total Candidates</div>
+        <div class="stat-value">{{ dashboardStats.total_candidates | number }}</div>
+      </article>
+      <article class="stat-card accent-teal">
+        <div class="stat-label">Last Zoho Sync</div>
+        <div class="stat-value stat-value-sm">{{ formattedLastSyncAt }}</div>
+      </article>
+      <article class="stat-card accent-green">
+        <div class="stat-label">Current Shortlist</div>
+        <div class="stat-value">{{ dashboardStats.current_shortlist_size | number }}</div>
+      </article>
+      <article class="stat-card accent-amber">
+        <div class="stat-label">Saved Filters</div>
+        <div class="stat-value">{{ dashboardStats.saved_filter_count | number }}</div>
+      </article>
+    </div>
+
+    <div class="two-col">
+      <article class="panel connection-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Zoho Recruit Connection</h2>
+            <p>Candidate data is synced securely through the backend integration.</p>
+          </div>
+          <span class="badge" [class.badge-success]="isConnected" [class.badge-danger]="!isConnected">
+            {{ isConnected ? 'Connected' : 'Disconnected' }}
+          </span>
+        </div>
+        <div class="panel-meta">
+          <span>Last successful sync</span>
+          <strong>{{ formattedSyncTime }}</strong>
+        </div>
+        <a class="primary-action" routerLink="/sync-candidates" [class.disabled]="!isConnected">Sync Candidates</a>
+      </article>
+
+      <article class="panel quick-actions-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Quick Actions</h2>
+            <p>Jump straight to the next recruiter task.</p>
+          </div>
+        </div>
+        <div class="quick-actions">
+          <a routerLink="/candidates" class="quick-action">View Candidates</a>
+          <a routerLink="/sync-candidates" class="quick-action">Sync Candidates</a>
+          <span class="quick-action muted">Filters &amp; Saved Templates</span>
+          <a routerLink="/ranking" class="quick-action">Ranking &amp; Shortlist</a>
+          <a routerLink="/duplicates" class="quick-action">Review Duplicates</a>
+        </div>
+      </article>
+    </div>
+
+    <article class="panel activity-panel">
+      <div class="panel-header">
+        <div>
+          <h2>Recent Activity</h2>
+          <p>The latest recruiter-owned events from sync, shortlist, filters, and exports.</p>
+        </div>
+      </div>
+
+      <div *ngIf="loading" class="activity-empty">Loading dashboard activity...</div>
+      <div *ngIf="!loading && recentActivity.length === 0" class="activity-empty">No recent activity yet.</div>
+
+      <div class="activity-list" *ngIf="!loading && recentActivity.length > 0">
+        <div class="activity-item" *ngFor="let item of recentActivity">
+          <div class="activity-icon">{{ item.action_type.charAt(0).toUpperCase() }}</div>
+          <div class="activity-copy">
+            <div class="activity-title">{{ item.description }}</div>
+            <div class="activity-meta">{{ item.action_type | titlecase }} · {{ item.occurred_at | date: 'medium' }}</div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</app-shell>

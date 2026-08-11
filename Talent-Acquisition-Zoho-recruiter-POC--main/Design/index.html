@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="auth-screen">
+  <div class="auth-visual">
+    <div class="auth-brand">
+      <span class="brand-mark">TA</span>
+      <span>Talent Acquisition</span>
+    </div>
+
+    <div class="auth-copy">
+      <span class="eyebrow">Candidate Screening</span>
+      <h1>Candidate Screening &amp; Shortlisting</h1>
+      <p>Intelligent Candidate Filtering and Export Layer for Zoho Recruit. Sync candidate profiles, apply multi-criteria filters, rank matches, and export a recruiter-ready shortlist.</p>
+
+      <div class="auth-flow">
+        <span class="flow-step">Sync</span><span class="flow-sep">&rarr;</span>
+        <span class="flow-step">Normalize</span><span class="flow-sep">&rarr;</span>
+        <span class="flow-step">Filter</span><span class="flow-sep">&rarr;</span>
+        <span class="flow-step">Rank</span><span class="flow-sep">&rarr;</span>
+        <span class="flow-step">Shortlist</span><span class="flow-sep">&rarr;</span>
+        <span class="flow-step">Export .xlsx</span>
+      </div>
+    </div>
+
+    <div class="text-sm" style="color:#8593B8; position:relative;">Read-only toward Zoho Recruit &middot; No candidate records are modified</div>
+  </div>
+
+  <div class="auth-panel">
+    <div class="auth-card">
+      <h2>Sign in</h2>
+      <p class="auth-card-sub">Access the candidate screening workspace.</p>
+
+      <form>
+        <div class="form-group">
+          <label for="email">Email / Username</label>
+          <input class="form-control" type="text" id="email" placeholder="recruiter@company.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input class="form-control" type="password" id="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
+        </div>
+        <div class="form-group" style="display:flex; align-items:center; justify-content:space-between;">
+          <label class="checkbox-row" style="margin-bottom:0;">
+            <input type="checkbox" id="remember">
+            <span>Remember me</span>
+          </label>
+        </div>
+
+        <a href="dashboard.html" class="btn btn-primary btn-lg btn-block">Sign In</a>
+      </form>
+
+      <p class="auth-footnote">Authorized recruiters only</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

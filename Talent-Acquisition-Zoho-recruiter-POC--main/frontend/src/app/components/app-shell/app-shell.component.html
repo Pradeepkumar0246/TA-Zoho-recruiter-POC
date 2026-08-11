@@ -1,0 +1,52 @@
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a routerLink="/dashboard" [class.active]="activeNav === 'dashboard'">Dashboard</a>
+      <a routerLink="/sync-candidates" [class.active]="activeNav === 'sync'">Sync Candidates</a>
+      <a routerLink="/candidates" [class.active]="activeNav === 'candidates'">Candidates</a>
+      <a routerLink="/filters" [class.active]="activeNav === 'filters'">Filters</a>
+      <a routerLink="/ranking" [class.active]="activeNav === 'ranking'">Ranking</a>
+      <a routerLink="/shortlists" [class.active]="activeNav === 'shortlists'">Shortlists</a>
+      <a routerLink="/duplicates" [class.active]="activeNav === 'duplicates'">Duplicates</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">{{ recruiterInitials }}</span>
+        <div class="profile-text">
+          <div class="profile-name">{{ recruiterName }}</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="#" class="logout-link" (click)="onLogout($event)">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">{{ headerContext }}</div>
+      <div class="header-right">
+        <div class="zoho-status">
+          <span class="status-dot" [class.dot-red]="statusState === 'disconnected'"></span>
+          Zoho Recruit: {{ statusState === 'connected' ? 'Connected' : 'Disconnected' }}
+        </div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">{{ recruiterInitials }}</span>
+          <span class="recruiter-name">{{ recruiterName }}</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <ng-content></ng-content>
+    </main>
+  </div>
+</div>

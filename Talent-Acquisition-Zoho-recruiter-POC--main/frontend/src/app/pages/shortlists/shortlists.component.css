@@ -1,0 +1,70 @@
+:host {
+  display: block;
+}
+
+.shortlist-head {
+  align-items: flex-start;
+}
+
+.filter-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.jd-filter {
+  min-width: 320px;
+  margin-bottom: 0;
+}
+
+.muted {
+  color: var(--slate-600);
+}
+
+.action-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-weight: 700;
+}
+
+.action-btn-primary {
+  background: var(--blue-600);
+  color: var(--white);
+}
+
+.action-btn-secondary {
+  background: var(--white);
+  border-color: var(--slate-200);
+  color: var(--slate-700);
+}
+
+.candidate-name {
+  font-weight: 600;
+}
+
+.candidate-meta {
+  color: var(--slate-500);
+  font-size: 12px;
+}
+
+.skills-cell {
+  max-width: 260px;
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}

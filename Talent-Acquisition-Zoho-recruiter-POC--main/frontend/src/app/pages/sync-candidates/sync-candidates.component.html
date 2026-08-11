@@ -1,0 +1,64 @@
+<app-shell activeNav="sync" headerContext="Sync Candidates" [statusState]="isConnected ? 'connected' : 'disconnected'" (logoutRequested)="onLogout()">
+  <section>
+    <div class="breadcrumb">
+      <a routerLink="/dashboard">Dashboard</a><span>/</span>
+      <span class="crumb-current">Sync Candidates</span>
+    </div>
+
+    <div class="page-header">
+      <div>
+        <h1>Sync Candidates from Zoho Recruit</h1>
+        <p class="page-sub">Retrieve the latest candidate profiles from the connected Zoho Recruit account.</p>
+      </div>
+      <span class="badge" [class.badge-success]="isConnected" [class.badge-danger]="!isConnected">
+        {{ isConnected ? 'Connected' : 'Disconnected' }}
+      </span>
+    </div>
+
+    <article class="card">
+      <div class="two-col">
+        <div class="connection-card">
+          <h2>Connection Details</h2>
+          <dl>
+            <div class="detail-row"><dt>Integration</dt><dd>Zoho Recruit</dd></div>
+            <div class="detail-row"><dt>Connection</dt><dd>{{ isConnected ? 'Connected' : 'Disconnected' }}</dd></div>
+            <div class="detail-row"><dt>Sync Type</dt><dd>{{ zohoStatus?.sync_type ?? 'manual' }}</dd></div>
+            <div class="detail-row"><dt>Access</dt><dd>{{ zohoStatus?.access_level ?? 'read_only' }}</dd></div>
+            <div class="detail-row"><dt>Last Successful Sync</dt><dd>{{ formattedSyncTime }}</dd></div>
+          </dl>
+        </div>
+
+        <div class="connection-card">
+          <h2>Sync Overview</h2>
+          <div class="steps-list">
+            <div class="step-item"><span class="step-num">1</span><span class="step-text">Connect to Zoho Recruit</span></div>
+            <div class="step-item"><span class="step-num">2</span><span class="step-text">Fetch candidate records</span></div>
+            <div class="step-item"><span class="step-num">3</span><span class="step-text">Normalize candidate information</span></div>
+            <div class="step-item"><span class="step-num">4</span><span class="step-text">Prepare candidates for filtering</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        Candidate data is fetched in read-only mode from Zoho Recruit. No candidate record is modified in Zoho.
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-primary" [disabled]="!isConnected || syncInProgress" (click)="onStartSync()">
+          {{ syncInProgress ? 'Sync In Progress...' : 'Start Candidate Sync' }}
+        </button>
+        <a class="btn btn-secondary" routerLink="/dashboard">Cancel</a>
+      </div>
+
+      <div class="info-box box-blue" *ngIf="lastSyncStatus as progress">
+        <div>
+          <strong>Current Sync Status:</strong> {{ progress.status | titlecase }}<br />
+          Fetched: {{ progress.records_fetched }} | New: {{ progress.records_new }} | Updated: {{ progress.records_updated }}
+        </div>
+      </div>
+
+      <p class="helper-text" *ngIf="!isConnected">Sync action is disabled until Zoho Recruit is connected.</p>
+      <p class="helper-text" *ngIf="syncErrorMessage">{{ syncErrorMessage }}</p>
+    </article>
+  </section>
+</app-shell>

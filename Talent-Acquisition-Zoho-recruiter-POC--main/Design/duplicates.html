@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duplicate Review | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sync-candidates.html">Sync Candidates</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="filters.html">Filters</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="duplicates.html" class="active">Duplicates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">RK</span>
+        <div class="profile-text">
+          <div class="profile-name">Recruiter</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">Duplicate Review</div>
+      <div class="header-right">
+        <div class="zoho-status"><span class="status-dot"></span> Zoho Recruit: Connected</div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">RK</span>
+          <span class="recruiter-name">Recruiter</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Dashboard</a><span>/</span>
+        <a href="candidates.html">Candidates</a><span>/</span>
+        <span class="crumb-current">Duplicates</span>
+      </div>
+
+      <div class="page-header">
+        <div>
+          <h1>Duplicate Candidate Review</h1>
+          <p class="page-sub">Possible duplicate candidate records, grouped by the Job Description (JD) they surfaced under. Multiple hiring drives can reference the same candidate, so duplicates are reviewed per JD.</p>
+        </div>
+      </div>
+
+      <div class="summary-grid" style="grid-template-columns: repeat(3, 1fr); max-width:640px;">
+        <div class="summary-item">
+          <div class="summary-value">2</div>
+          <div class="summary-label">Job Descriptions Reviewed</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value">1</div>
+          <div class="summary-label">Possible Duplicates</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value">1</div>
+          <div class="summary-label">No Duplicate Signal</div>
+        </div>
+      </div>
+
+      <!-- JD Group 1: Java Backend Developer -->
+      <div class="jd-group">
+        <div class="jd-group-header">
+          <h3>Java Backend Developer</h3>
+          <span class="jd-tag">JD-2026-014</span>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2>Priya Sharma</h2>
+              <p class="card-sub">Possible matching record: Priya S. &middot; Match Basis: Phone Number</p>
+            </div>
+            <span class="badge badge-warning">Possible Match</span>
+          </div>
+
+          <div class="compare-grid">
+            <div class="compare-card">
+              <h4>Priya Sharma &middot; ZR-CAND-002</h4>
+              <dl>
+                <dt>Name</dt><dd>Priya Sharma</dd>
+                <dt>Email</dt><dd>priya.sharma@example.com</dd>
+                <dt>Phone</dt><dd>+91 97XXXXXX20</dd>
+                <dt>Company</dt><dd>CloudEdge Systems</dd>
+                <dt>Experience</dt><dd>5 Years</dd>
+              </dl>
+            </div>
+            <div class="compare-card">
+              <h4>Priya S. &middot; Possible Match</h4>
+              <dl>
+                <dt>Name</dt><dd>Priya S.</dd>
+                <dt>Email</dt><dd>priya.s@example.com</dd>
+                <dt>Phone</dt><dd>+91 97XXXXXX20</dd>
+                <dt>Company</dt><dd>CloudEdge Systems</dd>
+                <dt>Experience</dt><dd>5 Years</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="detail-grid" style="margin-top:18px;">
+            <div class="detail-row"><dt>Confidence</dt><dd>Possible Match</dd></div>
+            <div class="detail-row"><dt>Job Description</dt><dd>Java Backend Developer &middot; JD-2026-014</dd></div>
+            <div class="detail-row"><dt>Source</dt><dd>Zoho Recruit</dd></div>
+          </div>
+
+          <div class="btn-row">
+            <a href="duplicates.html" class="btn btn-secondary btn-sm">Mark as Reviewed</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- JD Group 2: Frontend React Developer -->
+      <div class="jd-group">
+        <div class="jd-group-header">
+          <h3>Frontend React Developer</h3>
+          <span class="jd-tag">JD-2026-021</span>
+        </div>
+        <div class="jd-empty-note">No duplicate signals found among candidates filtered for this Job Description.</div>
+      </div>
+
+      <div class="info-box box-amber">
+        <span class="info-icon">&#9888;</span>
+        <span>Duplicate indicators are informational only and scoped to the JD they were found under. No candidate records are merged, deleted, or modified in Zoho Recruit.</span>
+      </div>
+
+      <div class="btn-row">
+        <a href="ranking.html" class="btn btn-primary btn-lg">Continue to Ranking</a>
+        <a href="candidates.html" class="btn btn-secondary btn-lg">Back to Candidates</a>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

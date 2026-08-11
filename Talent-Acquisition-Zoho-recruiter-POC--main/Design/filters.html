@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filters | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sync-candidates.html">Sync Candidates</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="filters.html" class="active">Filters</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="duplicates.html">Duplicates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">RK</span>
+        <div class="profile-text">
+          <div class="profile-name">Recruiter</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">Filters</div>
+      <div class="header-right">
+        <div class="zoho-status"><span class="status-dot"></span> Zoho Recruit: Connected</div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">RK</span>
+          <span class="recruiter-name">Recruiter</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Dashboard</a><span>/</span>
+        <a href="candidates.html">Candidates</a><span>/</span>
+        <span class="crumb-current">Filters</span>
+      </div>
+
+      <div class="page-header">
+        <div>
+          <h1>Filters</h1>
+          <p class="page-sub">Build multi-criteria filters using normalized candidate information, filter against a specific Job Description, and save reusable templates.</p>
+        </div>
+      </div>
+
+      <div class="info-box box-blue">
+        <span class="info-icon">&#8505;</span>
+        <span>Candidates must match all selected criteria (logical AND filtering). The basic version of this filter is also available inline on the Candidates page.</span>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Filter by Job Description (JD)</h2></div>
+        <div class="form-grid cols-2">
+          <div class="form-group">
+            <label>Job Description</label>
+            <select class="form-control" id="jdSelect">
+              <option>Any / No JD</option>
+              <option selected>Java Backend Developer &middot; JD-2026-014</option>
+              <option>Frontend React Developer &middot; JD-2026-021</option>
+              <option>DevOps Engineer &middot; JD-2026-009</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Skills to Search &amp; Match Against JD</label>
+            <input class="form-control" type="text" id="jdSkills" placeholder="e.g. Java, Spring Boot, Microservices" value="Java, Spring Boot, Microservices">
+            <div class="hint">Candidates are matched and scored against the skills required in the selected JD.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Basic Filters</h2></div>
+        <div class="form-grid">
+          <div class="form-group" style="grid-column: span 3;">
+            <label>Skills</label>
+            <div class="chip-row">
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Spring Boot</span>
+              <span class="skill-chip">Microservices</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Experience &mdash; Minimum</label>
+            <input class="form-control" type="text" value="4 Years">
+          </div>
+          <div class="form-group">
+            <label>Experience &mdash; Maximum</label>
+            <input class="form-control" type="text" value="8 Years">
+          </div>
+          <div class="form-group">
+            <label>Current Location</label>
+            <input class="form-control" type="text" value="Bengaluru">
+          </div>
+
+          <div class="form-group">
+            <label>Preferred Location</label>
+            <select class="form-control">
+              <option>Any</option>
+              <option selected>Bengaluru</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Notice Period</label>
+            <select class="form-control">
+              <option selected>30 Days or Less</option>
+              <option>15 Days or Less</option>
+              <option>60 Days or Less</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Current Company</label>
+            <input class="form-control" type="text" placeholder="e.g. TechNova Solutions">
+          </div>
+
+          <div class="form-group">
+            <label>Current CTC</label>
+            <div class="form-range">
+              <input class="form-control" type="text" placeholder="Min">
+              <span class="range-sep">to</span>
+              <input class="form-control" type="text" placeholder="Max">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Expected CTC</label>
+            <div class="form-range">
+              <input class="form-control" type="text" placeholder="Min">
+              <span class="range-sep">to</span>
+              <input class="form-control" type="text" placeholder="Max">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Candidate Status</label>
+            <select class="form-control">
+              <option>Any</option>
+              <option selected>Available</option>
+              <option>Open to Opportunities</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Advanced Filters</h2></div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Degree</label>
+            <select class="form-control"><option>Any</option><option selected>Bachelor Degree</option></select>
+          </div>
+          <div class="form-group">
+            <label>Education</label>
+            <input class="form-control" type="text" placeholder="e.g. Computer Science">
+          </div>
+          <div class="form-group">
+            <label>Certification</label>
+            <input class="form-control" type="text" placeholder="e.g. AWS Certified Developer">
+          </div>
+          <div class="form-group">
+            <label>Resume Updated Date</label>
+            <input class="form-control" type="text" placeholder="e.g. Last 30 days">
+          </div>
+          <div class="form-group">
+            <label>Candidate Source</label>
+            <select class="form-control"><option selected>Zoho Recruit</option></select>
+          </div>
+          <div class="form-group">
+            <label>Relevant Experience</label>
+            <input class="form-control" type="text" placeholder="e.g. 4+ Years">
+          </div>
+          <div class="form-group">
+            <label>Previous Company</label>
+            <input class="form-control" type="text" placeholder="e.g. Infosys">
+          </div>
+          <div class="form-group">
+            <label>Employment Status</label>
+            <select class="form-control"><option>Any</option><option selected>Employed</option></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Filter Summary</h2></div>
+        <div class="detail-grid">
+          <div class="detail-row"><dt>Job Description</dt><dd>Java Backend Developer &middot; JD-2026-014</dd></div>
+          <div class="detail-row"><dt>Skills</dt><dd>Java + Spring Boot + Microservices</dd></div>
+          <div class="detail-row"><dt>Experience</dt><dd>4&ndash;8 Years</dd></div>
+          <div class="detail-row"><dt>Location</dt><dd>Bengaluru</dd></div>
+          <div class="detail-row"><dt>Notice Period</dt><dd>&le; 30 Days</dd></div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <a href="candidates.html" class="btn btn-primary btn-lg">Apply Filters</a>
+        <button type="button" class="btn btn-outline-teal btn-lg" onclick="openSaveModal()">Save Filter</button>
+        <a href="filters.html" class="btn btn-secondary btn-lg">Clear Filters</a>
+        <a href="candidates.html" class="btn btn-ghost btn-lg">Back to Candidates</a>
+      </div>
+
+      <div class="card" style="margin-top:26px;">
+        <div class="card-header"><h2>Saved Filter Templates</h2></div>
+        <div id="savedFiltersList">
+
+          <div class="card" style="box-shadow:none; border-style:dashed; margin-bottom:14px;">
+            <div class="card-header">
+              <h2 style="font-size:14.5px;">Java Backend &ndash; Bengaluru</h2>
+              <span class="badge badge-neutral">JD-2026-014</span>
+            </div>
+            <div class="detail-grid" style="margin-bottom:14px;">
+              <div class="detail-row"><dt>Job Description</dt><dd>Java Backend Developer</dd></div>
+              <div class="detail-row"><dt>Skills</dt><dd>Java, Spring Boot, Microservices</dd></div>
+              <div class="detail-row"><dt>Experience</dt><dd>4&ndash;8 Years</dd></div>
+              <div class="detail-row"><dt>Location</dt><dd>Bengaluru</dd></div>
+              <div class="detail-row"><dt>Notice</dt><dd>&le; 30 Days</dd></div>
+            </div>
+            <div class="btn-row" style="margin-top:0;">
+              <a href="candidates.html" class="btn btn-primary btn-sm">Apply Template</a>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none; border-style:dashed; margin-bottom:0;">
+            <div class="card-header">
+              <h2 style="font-size:14.5px;">Immediate Joiners &ndash; Java</h2>
+              <span class="badge badge-neutral">JD-2026-014</span>
+            </div>
+            <div class="detail-grid" style="margin-bottom:14px;">
+              <div class="detail-row"><dt>Job Description</dt><dd>Java Backend Developer</dd></div>
+              <div class="detail-row"><dt>Skills</dt><dd>Java</dd></div>
+              <div class="detail-row"><dt>Notice</dt><dd>0&ndash;15 Days</dd></div>
+              <div class="detail-row"><dt>Location</dt><dd>Any</dd></div>
+            </div>
+            <div class="btn-row" style="margin-top:0;">
+              <a href="candidates.html" class="btn btn-primary btn-sm">Apply Template</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="info-box box-blue" style="margin-top:16px;">
+          <span class="info-icon">&#8505;</span>
+          <span>Prototype only &mdash; saved template behavior is simulated. New templates you save appear at the top of this list.</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Save Filter modal — asks for a name before saving -->
+<div class="modal-overlay" id="saveModal">
+  <div class="modal-box">
+    <h3>Save Filter</h3>
+    <p class="modal-sub">Give this filter a name. It will be saved along with the selected Job Description.</p>
+    <div class="form-group">
+      <label>Filter Name</label>
+      <input class="form-control" type="text" id="filterNameInput" placeholder="e.g. Java Backend Shortlist">
+    </div>
+    <div class="detail-row">
+      <dt>Job Description to Save</dt>
+      <dd id="jdPreview">Java Backend Developer &middot; JD-2026-014</dd>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-secondary" onclick="closeSaveModal()">Cancel</button>
+      <button type="button" class="btn btn-primary" onclick="saveFilter()">Save Filter</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  var jdSelect = document.getElementById('jdSelect');
+
+  function openSaveModal() {
+    document.getElementById('jdPreview').textContent = jdSelect.value;
+    document.getElementById('saveModal').classList.add('is-open');
+    document.getElementById('filterNameInput').focus();
+  }
+  function closeSaveModal() {
+    document.getElementById('saveModal').classList.remove('is-open');
+  }
+  function saveFilter() {
+    var name = document.getElementById('filterNameInput').value.trim();
+    if (!name) {
+      alert('Please enter a name for this filter.');
+      return;
+    }
+    var jd = jdSelect.value;
+    var skills = document.getElementById('jdSkills').value;
+
+    var card = document.createElement('div');
+    card.className = 'card';
+    card.style.boxShadow = 'none';
+    card.style.borderStyle = 'dashed';
+    card.style.marginBottom = '14px';
+    card.innerHTML =
+      '<div class="card-header">' +
+        '<h2 style="font-size:14.5px;">' + name + '</h2>' +
+        '<span class="badge badge-success">Just Saved</span>' +
+      '</div>' +
+      '<div class="detail-grid" style="margin-bottom:14px;">' +
+        '<div class="detail-row"><dt>Job Description</dt><dd>' + jd + '</dd></div>' +
+        '<div class="detail-row"><dt>Skills</dt><dd>' + skills + '</dd></div>' +
+      '</div>' +
+      '<div class="btn-row" style="margin-top:0;">' +
+        '<a href="candidates.html" class="btn btn-primary btn-sm">Apply Template</a>' +
+      '</div>';
+
+    var list = document.getElementById('savedFiltersList');
+    list.insertBefore(card, list.firstChild);
+
+    closeSaveModal();
+  }
+</script>
+</body>
+</html>

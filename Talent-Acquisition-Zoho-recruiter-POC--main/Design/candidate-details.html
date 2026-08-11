@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjun Kumar | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sync-candidates.html">Sync Candidates</a>
+      <a href="candidates.html" class="active">Candidates</a>
+      <a href="filters.html">Filters</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="duplicates.html">Duplicates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">RK</span>
+        <div class="profile-text">
+          <div class="profile-name">Recruiter</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">Candidate Profile</div>
+      <div class="header-right">
+        <div class="zoho-status"><span class="status-dot"></span> Zoho Recruit: Connected</div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">RK</span>
+          <span class="recruiter-name">Recruiter</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Dashboard</a><span>/</span>
+        <a href="candidates.html">Candidates</a><span>/</span>
+        <span class="crumb-current">Arjun Kumar</span>
+      </div>
+
+      <div class="card">
+        <div class="profile-header">
+          <div class="profile-identity">
+            <span class="profile-avatar">AK</span>
+            <div>
+              <h1>Arjun Kumar</h1>
+              <div class="profile-role">Senior Java Developer</div>
+              <div class="profile-badges">
+                <span class="match-badge match-high">92% Match</span>
+                <span class="badge badge-success">Available</span>
+                <span class="badge badge-neutral">Zoho Recruit</span>
+                <span class="badge badge-info">JD-2026-014</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Contact Information &middot; sourced from Zoho Recruit</div>
+        <div class="detail-grid" style="margin-bottom:22px;">
+          <div class="detail-row"><dt>Email</dt><dd>arjun.kumar@example.com</dd></div>
+          <div class="detail-row"><dt>Phone</dt><dd>+91 98XXXXXX10</dd></div>
+        </div>
+
+        <div class="section-title">Professional Information</div>
+        <div class="detail-grid" style="margin-bottom:22px;">
+          <div class="detail-row"><dt>Experience</dt><dd>6 Years</dd></div>
+          <div class="detail-row"><dt>Relevant Experience</dt><dd>5 Years</dd></div>
+          <div class="detail-row"><dt>Current Company</dt><dd>TechNova Solutions</dd></div>
+          <div class="detail-row"><dt>Current Location</dt><dd>Bengaluru</dd></div>
+          <div class="detail-row"><dt>Preferred Location</dt><dd>Bengaluru</dd></div>
+          <div class="detail-row"><dt>Notice Period</dt><dd>30 Days</dd></div>
+        </div>
+
+        <div class="section-title">Skills</div>
+        <div class="chip-row" style="margin-bottom:22px;">
+          <span class="skill-chip">Java</span>
+          <span class="skill-chip">Spring Boot</span>
+          <span class="skill-chip">Microservices</span>
+          <span class="skill-chip">REST API</span>
+          <span class="skill-chip">PostgreSQL</span>
+        </div>
+
+        <div class="section-title">Education</div>
+        <div class="detail-grid" style="margin-bottom:22px;">
+          <div class="detail-row"><dt>Degree</dt><dd>B.E. Computer Science</dd></div>
+          <div class="detail-row"><dt>Normalized</dt><dd>Bachelor Degree &ndash; Computer Science</dd></div>
+        </div>
+
+        <div class="section-title">Compensation</div>
+        <div class="detail-grid" style="margin-bottom:22px;">
+          <div class="detail-row"><dt>Current CTC</dt><dd>&#8377;10 LPA</dd></div>
+          <div class="detail-row"><dt>Expected CTC</dt><dd>&#8377;14 LPA</dd></div>
+        </div>
+
+        <div class="section-title">Candidate Source</div>
+        <div class="detail-grid">
+          <div class="detail-row"><dt>Source</dt><dd>Zoho Recruit</dd></div>
+          <div class="detail-row"><dt>Candidate ID</dt><dd>ZR-CAND-001</dd></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Normalized Data</h2></div>
+        <div class="norm-list">
+          <span class="norm-chip"><span class="raw">Bangalore Karnataka</span><span class="arrow">&rarr;</span><span class="normalized">Bengaluru</span></span>
+          <span class="norm-chip"><span class="raw">1 Month</span><span class="arrow">&rarr;</span><span class="normalized">30 Days</span></span>
+        </div>
+      </div>
+
+      <div class="info-box box-teal" style="margin-top:18px;">
+        <span class="info-icon">&#128274;</span>
+        <span>This profile is read-only. Candidate information cannot be created, edited, or updated back into Zoho Recruit from this application.</span>
+      </div>
+
+      <div class="btn-row">
+        <a href="candidates.html" class="btn btn-secondary btn-lg">Back to Results</a>
+        <a href="ranking.html" class="btn btn-primary btn-lg">View Match Analysis</a>
+        <a href="ranking.html" class="btn btn-outline-teal btn-lg">Add to Shortlist</a>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

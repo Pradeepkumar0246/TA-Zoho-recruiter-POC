@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="sync-candidates.html">Sync Candidates</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="filters.html">Filters</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="duplicates.html">Duplicates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">RK</span>
+        <div class="profile-text">
+          <div class="profile-name">Recruiter</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">Dashboard</div>
+      <div class="header-right">
+        <div class="zoho-status"><span class="status-dot"></span> Zoho Recruit: Connected</div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">RK</span>
+          <span class="recruiter-name">Recruiter</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1>Recruitment Dashboard</h1>
+          <p class="page-sub">Manage candidate synchronization, filtering, ranking, and shortlist exports.</p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">&#128101;</div>
+          <div class="stat-label">Total Candidates</div>
+          <div class="stat-value">2,486</div>
+        </div>
+        <div class="stat-card icon-teal">
+          <div class="stat-icon">&#8635;</div>
+          <div class="stat-label">Last Zoho Sync</div>
+          <div class="stat-value" style="font-size:17px;">Today, 10:30 AM</div>
+        </div>
+        <div class="stat-card icon-green">
+          <div class="stat-icon">&#9745;</div>
+          <div class="stat-label">Current Shortlist</div>
+          <div class="stat-value">12 Candidates</div>
+        </div>
+        <div class="stat-card icon-amber">
+          <div class="stat-icon">&#128190;</div>
+          <div class="stat-label">Saved Filters</div>
+          <div class="stat-value">5 Templates</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-header">
+            <h2>Zoho Recruit Connection</h2>
+            <span class="badge badge-success">Connected</span>
+          </div>
+          <p class="text-muted">Candidate data is retrieved securely from Zoho Recruit through the backend integration.</p>
+          <div class="btn-row">
+            <a href="sync-candidates.html" class="btn btn-primary">Sync Candidates</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><h2>Quick Actions</h2></div>
+          <div class="btn-row" style="margin-top:0;">
+            <a href="candidates.html" class="btn btn-secondary">View Candidates</a>
+            <a href="filters.html" class="btn btn-secondary">Filters &amp; Saved Templates</a>
+            <a href="ranking.html" class="btn btn-secondary">Ranking &amp; Shortlist</a>
+            <a href="duplicates.html" class="btn btn-secondary">Review Duplicates</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Recent Activity</h2></div>
+        <div class="steps-list">
+          <div class="step-item">
+            <span class="step-num">&#10003;</span>
+            <span class="step-text">Zoho candidate sync completed</span>
+          </div>
+          <div class="step-item">
+            <span class="step-num">&#10003;</span>
+            <span class="step-text">Java Backend (JD-2026-014) filter template used</span>
+          </div>
+          <div class="step-item">
+            <span class="step-num">&#10003;</span>
+            <span class="step-text">Candidate shortlist prepared from Ranking</span>
+          </div>
+          <div class="step-item">
+            <span class="step-num">&#10003;</span>
+            <span class="step-text">Shortlist downloaded as Excel</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

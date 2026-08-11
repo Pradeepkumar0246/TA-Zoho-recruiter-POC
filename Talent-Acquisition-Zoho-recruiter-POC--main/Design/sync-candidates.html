@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sync Candidates | Talent Acquisition</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">TA</span>
+      <div class="brand-text">
+        <div class="brand-name">Talent Acquisition</div>
+        <div class="brand-sub">Candidate Screening</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sync-candidates.html" class="active">Sync Candidates</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="filters.html">Filters</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="duplicates.html">Duplicates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-profile">
+        <span class="avatar">RK</span>
+        <div class="profile-text">
+          <div class="profile-name">Recruiter</div>
+          <div class="profile-role">Talent Acquisition</div>
+        </div>
+      </div>
+      <a href="index.html" class="logout-link">Logout</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="top-header">
+      <div class="header-context">Sync Candidates</div>
+      <div class="header-right">
+        <div class="zoho-status"><span class="status-dot"></span> Zoho Recruit: Connected</div>
+        <div class="header-recruiter">
+          <span class="avatar-sm">RK</span>
+          <span class="recruiter-name">Recruiter</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="dashboard.html">Dashboard</a><span>/</span>
+        <span class="crumb-current">Sync Candidates</span>
+      </div>
+
+      <div class="page-header">
+        <div>
+          <h1>Sync Candidates from Zoho Recruit</h1>
+          <p class="page-sub">Retrieve the latest candidate profiles from the connected Zoho Recruit account.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-header"><h2>Connection</h2></div>
+          <div class="detail-grid">
+            <div class="detail-row"><dt>Integration</dt><dd>Zoho Recruit</dd></div>
+            <div class="detail-row"><dt>Connection</dt><dd><span class="badge badge-success">Connected</span></dd></div>
+            <div class="detail-row"><dt>Sync Type</dt><dd>Manual</dd></div>
+            <div class="detail-row"><dt>Access</dt><dd><span class="badge badge-neutral">Read Only</span></dd></div>
+          </div>
+          <hr class="divider">
+          <div class="detail-row"><dt>Last Successful Sync</dt><dd>Today, 10:30 AM</dd></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><h2>Sync Overview</h2></div>
+          <div class="steps-list">
+            <div class="step-item"><span class="step-num">1</span><span class="step-text">Connect to Zoho Recruit</span></div>
+            <div class="step-item"><span class="step-num">2</span><span class="step-text">Fetch candidate records</span></div>
+            <div class="step-item"><span class="step-num">3</span><span class="step-text">Normalize candidate information</span></div>
+            <div class="step-item"><span class="step-num">4</span><span class="step-text">Prepare candidates for filtering</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box box-blue">
+        <span class="info-icon">&#8505;</span>
+        <span>Candidate information will be retrieved from Zoho Recruit and normalized for filtering, ranking, shortlisting, and export. No candidate information will be modified in Zoho Recruit.</span>
+      </div>
+
+      <div class="btn-row">
+        <a href="sync-success.html" class="btn btn-primary btn-lg">Start Candidate Sync</a>
+        <a href="dashboard.html" class="btn btn-secondary btn-lg">Cancel</a>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
